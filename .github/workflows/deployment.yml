@@ -15,7 +15,7 @@ jobs:
       - name: Setup Maven (if not present)
         uses: actions/setup-java@v3
         with:
-          java-version: '11'  # Adjust Java version as needed for your project
+          java-version: '17'  # Adjust Java version as needed for your project
 
       - name: Set up Google Cloud SDK (unchanged)
         uses: google-github-actions/setup-gcloud@main
