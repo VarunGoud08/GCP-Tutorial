@@ -12,10 +12,12 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v3
 
-      - name: Setup Maven (if not present)
+      - name: Setup Java 17 (JDK)
         uses: actions/setup-java@v3
         with:
-          java-version: '17'  # Adjust Java version as needed for your project
+          java-version: 17
+          java-package: jdk  # You can choose jdk or adopt
+          distribution: 'adopt'
 
       - name: Set up Google Cloud SDK (unchanged)
         uses: google-github-actions/setup-gcloud@main
