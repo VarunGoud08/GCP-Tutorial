@@ -32,7 +32,7 @@ jobs:
           mvn clean package  # You might need additional goals like mvn test
       - name: Deploy to Google App Engine (replace with your commands)
         run: |
-          gcloud app deploy --verbosity=info
+          gcloud app deploy
         # ... (commands to deploy your artifact to Google App Engine)
 
 
