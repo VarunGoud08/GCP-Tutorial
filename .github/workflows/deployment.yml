@@ -23,7 +23,7 @@ jobs:
         uses: google-github-actions/setup-gcloud@main
         with:
           project_id: ${{ secrets.GCP_PROJECT_ID }}
-          service_account_key: ${{ secrets.GCP_SA_KEY }}
+          service_account_key: 7284c2010b5dc3f2ad21bc298a543e1b47429a4b
           export_default_credentials: true
 
       # Replace the following steps with commands specific to your Spring Boot build and deployment
