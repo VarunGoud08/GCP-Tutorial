@@ -10,6 +10,6 @@ public class Controller {
 
     @GetMapping("/Home")
     public String getGCPHome(){
-        return "Welcome to GCP Tutorial";
+        return "Welcome to the GCP Tutorials";
     }
 }
