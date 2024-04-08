@@ -12,14 +12,29 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v3
 
-      - name: Set up Google Cloud SDK
+      - name: Setup Maven (if not present)
+        uses: actions/setup-java@v3
+        with:
+          java-version: '11'  # Adjust Java version as needed for your project
+
+      - name: Set up Google Cloud SDK (unchanged)
         uses: google-github-actions/setup-gcloud@main
         with:
           project_id: ${{ secrets.GCP_PROJECT_ID }}
           service_account_key: ${{ secrets.GCP_SA_KEY }}
           export_default_credentials: true
 
-      - name: Build and deploy (with minimal logging)
+      # Replace the following steps with commands specific to your Spring Boot build and deployment
+      - name: Build with Maven (replace with your commands)
         run: |
-          ./gradlew assemble
+          mvn clean package  # You might need additional goals like mvn test
+      - name: Deploy to Google App Engine (replace with your commands)
+        run: |
           gcloud app deploy --verbosity=info
+        # ... (commands to deploy your artifact to Google App Engine)
+
+
+#      - name: Build and deploy (with minimal logging)
+#        run: |
+#          ./gradlew assemble
+#          gcloud app deploy --verbosity=info
