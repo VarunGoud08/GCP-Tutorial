@@ -19,13 +19,17 @@ jobs:
           java-package: jdk  # You can choose jdk or adopt
           distribution: 'adopt'
 
-      - name: Set up Google Cloud SDK
-        run: gcloud auth login
+      - name: Set up Google Cloud SDK (unchanged)
+        uses: google-github-actions/setup-gcloud@main
+        with:
+          project_id: ultimate-karma-417108
+          service_account_key: ${{ secrets.GCP_SA_KEY }}
+          export_default_credentials: true
 
       # Replace the following steps with commands specific to your Spring Boot build and deployment
       - name: Deploy to Google App Engine (replace with your commands)
         run: |
-          gcloud app deploy --project=ultimate-karma-417108
+          gcloud app deploy
         # ... (commands to deploy your artifact to Google App Engine)
 
 
